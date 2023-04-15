@@ -36,8 +36,14 @@ public class ListUtils {
     }
 
     static void printNumbersInReverse(List<Integer> numbersList) {
+        boolean firstSymbolPrinted = false;
         for (int i = numbersList.size() - 1; i >= 0; i--) {
-            System.out.println(numbersList.get(i));
+            if (firstSymbolPrinted) {
+                System.out.print(", ");
+            }
+            firstSymbolPrinted = true;
+            System.out.print(numbersList.get(i));
         }
+        System.out.println();
     }
 }
